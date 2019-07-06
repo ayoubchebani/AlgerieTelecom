@@ -1,0 +1,249 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<title>Application</title>
+</head>
+<body>
+	<div class="container">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Algerie Telecom</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+		  <ul class="navbar-nav">
+			
+			<li class="nav-item active">
+			  <a class="nav-link" href="#" id="option1">Categories <span class="sr-only"></span></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#" id="option2">Domaines<span class="sr-only"></span></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#"id="option3" >Adresses Ip<span class="sr-only"></span></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#" id="option4">Configuration Avancée<span class="sr-only"></span></a>
+			</li>
+
+		  </ul>
+		</div>
+	  </nav>
+	</div>
+	
+	<br><br><br><br> <br>
+	<div class="col col-lg-6 offset-md-3" id="cat">
+			<table class="table">
+					<thead class="thead-dark">
+					  <tr>
+						<th scope="col">#</th>
+						<th scope="col">Categorie</th>
+						<th scope="col">Autoriser</th>
+						<th scope="col">Refuser</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<th scope="row">1</th>
+						<td>Proxy</td>
+						<td><div class="radio">
+								<label><input type="radio" id='regular' name="optradio"></label>
+							</div></td>
+						<td><div class="radio">
+								<label><input type="radio" id='regular' name="optradio"></label>
+							</div></td>
+					  </tr>
+					  <tr>
+						<th scope="row">2</th>
+						<td>Web</td>
+						<td><div class="radio">
+								<label><input type="radio" id='regulars' name="optradio1"></label>
+							</div></td>
+						<td><div class="radio">
+								<label><input type="radio" id='regulars' name="optradio1"></label>
+							</div></td>
+					  </tr>
+					  <tr>
+						<th scope="row">3</th>
+						<td>Pornographie</td>
+						<td><div class="radio">
+								<label><input type="radio" id='regulare' name="optradio2"></label>
+							</div></td>
+						<td><div class="radio">
+								<label><input type="radio" id='regulare' name="optradio2"></label>
+							</div></td>
+					  </tr>
+					</tbody>
+				  </table>
+				  
+		
+		</div>
+		<div class="col col-lg-6 offset-md-3" id="dom">
+				<form>
+						<div class="form-group">
+						
+						  <input type="text" class="form-control" id="domaine" placeholder="Enter Domaine">
+						  <small id="emailHelp" class="form-text text-muted">exemple : www.facebook.com</small>
+						</div>
+						<div class="form-group">
+								<label for="exampleFormControlSelect1">Action</label>
+								<select class="form-control" id="action">
+								  <option>Autoriser</option>
+								  <option>Refuser</option>
+								
+								</select>
+							  </div>
+						<button type="submit" class="btn btn-primary add-row">Ajouter Domaine</button>
+							
+					  </form>
+				<table class="table">
+						<thead class="thead-dark">
+						  <tr>
+							<th scope="col">#</th>
+							<th scope="col">Domaine</th>
+							<th scope="col">Etat</th>
+							<th scope="col">Selection</th>
+						  </tr>
+						</thead>
+						<tbody>
+						
+					
+						</tbody>
+					  </table>
+					  <button type="submit" class="btn btn-danger delete-row">Supprimer Domaine</button>
+			
+			</div>
+		<div id="ip">
+				<h1>For Ip Addresses</h1>
+	
+	
+			</div>
+			<div id="acl">
+					<h1>For Acl</h1>
+		
+		
+				</div>
+</body>
+<script>
+$(document).ready(function () {
+	$('#cat').show();
+	$('#dom').hide();
+		$('#ip').hide();
+		$('#acl').hide();
+
+	$('#option1').click(function(){
+		$('#dom').hide();
+		$('#ip').hide();
+		$('#acl').hide();
+		$('#cat').show();
+
+	});
+
+	$('#option2').click(function(){
+		$('#cat').hide();
+		$('#ip').hide();
+		$('#acl').hide();
+		$('#dom').show();
+
+	});
+	$('#option3').click(function(){
+		$('#cat').hide();
+		$('#dom').hide();
+		$('#acl').hide();
+		$('#ip').show();
+
+	});
+	$('#option4').click(function(){
+		$('#cat').hide();
+		$('#ip').hide();
+		$('#dom').hide();
+		$('#acl').show();
+
+	});
+	$('.nav-item').on("click", function(){
+
+$('.nav-item').removeClass('active');
+
+$(this).addClass('active');
+});
+
+});
+
+    $(document).ready(function(){
+		var count=0;
+        $(".add-row").click(function(){
+            var domaine = $("#domaine").val();
+            var etat;
+			var action = $("#action option:selected").text();
+			if(action == "Autoriser")
+			etat = "Accessible";
+			else 
+			etat = "Inaccessible";
+			count ++; 
+            var markup = "<tr><th scope='row'>"+count+"</th><td>"+ domaine +"</td><td>" + etat + "</td><td><input type='checkbox' name='record'></td>";
+            $("table tbody").append(markup);
+        });
+        
+      
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });    
+
+$(document).ready(function () {
+    var counter = 0;
+
+    $("#addrow").on("click", function () {
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols +='<td><input class="form-control" type="text" placeholder="Donnez un nom de Domaine"></td>';
+        cols +='<td><div class="radio"> <label><input type="radio" id="regular" name="optradio'+ counter + '"></label></div></td>';
+        cols +='<td><div class="radio"> <label><input type="radio" name="optradio' + counter + '"></label></div></td>';
+
+        cols += '<td><button type="button" class="btn btn-primary" id="addrow">Ajouter</button></td>';
+		cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+
+        newRow.append(cols);
+        $("table.order-list").append(newRow);
+        counter++;
+    });
+
+
+
+    $("table.order-list").on("click", ".ibtnDel", function (event) {
+        $(this).closest("tr").remove();       
+        counter -= 1
+    });
+
+
+});
+
+
+
+function calculateRow(row) {
+    var price = +row.find('input[name^="price"]').val();
+
+}
+
+function calculateGrandTotal() {
+    var grandTotal = 0;
+    $("table.order-list").find('input[name^="price"]').each(function () {
+        grandTotal += +$(this).val();
+    });
+    $("#grandtotal").text(grandTotal.toFixed(2));
+}
+</script>
+</html>
