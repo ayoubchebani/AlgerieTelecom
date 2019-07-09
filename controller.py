@@ -4,12 +4,18 @@
 import re
 from editconfig import editconfig
 
+mode = 'mandatory'
 class Params():
     def __init__(self):
         pass
 
     def getcats(self):
-        f = open("cat.list",'r').readlines()
+        global mode
+        if mode == 'mandatory':
+            f = open('blacklist.list','r').readlines()
+        else:
+            f = open('whitelist.list','r').readlines()
+
         catlist = []
         for catname in f:
             catlist.append(catname.strip())
@@ -76,22 +82,25 @@ class Mandatory(Params):
 
 
 def main():
+    global mode
     #mode = "unconfined"
     mode = "mandatory"
     if mode == "mandatory":
         man = Mandatory()
-        f = open("mandatory.conf","w")
+        f = open("mandatory.bkf","w")
+        f.write("# squidguard mandatory mode config file")
         for temp in  man.mandatory_dest():
             f.write(temp)
         f.write(man.mandatory_acl())
         f.close()
-        print "[+] mandatory.conf created successfuly"
+        print "[+] mandatory.bkf created successfuly"
     elif mode == "unconfined":
         unconf = Unconfined()
-        f = open("unconfined.conf","w")
+        f = open("unconfined.bkf","w")
+        f.write("# squidguard unconfined mode config file")
         f.write(unconf.unconfined())
         f.close()
-        print "[+] unconfined.conf created successfuly"
+        print "[+] unconfined.bkf created successfuly"
 if __name__ == "__main__":
     main()
 
