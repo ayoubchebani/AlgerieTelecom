@@ -161,7 +161,7 @@
 							  </tr>
 							</tbody>
 						  </table>
-						
+						  <button type="submit" class="btn btn-primary add-row">Submit</button>
 						  
 				
 				</div>
@@ -201,7 +201,41 @@
 					
 					</div>
 				<div id="ip">
-						<h1>For Ip Addresses</h1>
+					<div class="col col-lg-6 offset-md-3" id="dom">
+						<form>
+								<div class="form-group">
+								
+								  <input type="text" class="form-control" id="domaine" placeholder="Entrer Adresse IP">
+								  <small id="emailHelp" class="form-text text-muted">exemple : 192.168.1.2</small>
+								</div>
+								<div class="form-group">
+										<label for="exampleFormControlSelect1">Action</label>
+										<select class="form-control" id="action">
+										  <option>Autoriser</option>
+										  <option>Refuser</option>
+										
+										</select>
+									  </div>
+								<button type="submit" class="btn btn-primary add-row">Ajouter Adresse IP</button>
+									
+							  </form>
+						<table class="table">
+								<thead class="thead-dark">
+								  <tr>
+									<th scope="col">#</th>
+									<th scope="col">Adresse IP</th>
+									<th scope="col">Etat</th>
+									<th scope="col">Selection</th>
+								  </tr>
+								</thead>
+								<tbody>
+								
+							
+								</tbody>
+							  </table>
+							  <button type="submit" class="btn btn-danger delete-row">Supprimer Adresse</button>
+					
+					</div>
 			
 			
 					</div>

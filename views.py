@@ -13,8 +13,8 @@ def help(request):
     dict = {'here':problem}
     return render(request,'help.html',context=dict)
 
-def button1(request):
-    return render(request,'index.html')
+#def button1(request):
+#    return render(request,'index.html')
 
 def funct1(request):
     print("unconfined")
@@ -23,9 +23,8 @@ def funct1(request):
     
     return render(request,'index.html',context={'data':data})
 
-def button2(request):
-    data = "ayoub"
-    return render(request,'index.html',context={'data':data})
+
+
 
 def funct2(request):
     mandatory = "mandatory"
@@ -34,6 +33,30 @@ def funct2(request):
     
     return render(request,'index.html',context=dictionnary)
 
+def Kids_profile(request):
+    kids = 'kids'
+    print(kids)
+    return render(request,'menu.html',context={'data':kids})
+
+def Gaming_profile(request):
+    gaming = 'gaming'
+    print(gaming)
+    return render(request,'menu.html',context={'game':gaming})
+
+def Cooking_profile(request):
+    Cooking = 'Cooking'
+    print(Cooking)
+    return render(request,'menu.html',context={'cook':Cooking})
+
+def Stream_profile(request):
+    stream = 'streaming'
+    print(stream)
+    return render(request,'menu.html',context={'stream':stream})
+
+def Social_profile(request):
+    social = 'social'
+    print(social)
+    return render(request,'menu.html',context={'social':social})
 def menu(request):
     return render(request, 'menu.html')
 
